@@ -1,4 +1,4 @@
-import{f as m,i as u,C as f}from"./curriculum-DMmQFzYt.js";import{i as h}from"./reveal-DIdJkQJ2.js";const l=m();document.body.dataset.theme=l.theme;u(document.getElementById("header-root"),l);const o=f.months.map(e=>({label:`Month ${e.id}: ${e.title}`,color:e.color,weeks:[1,2,3,4].map(a=>({week:a,lessons:e.lessons.filter(s=>s.week===a).map(s=>({...s,vocabulary:s.content.filter(t=>t.type==="vocabulary"||t.type==="phrase"),grammar:s.content.filter(t=>t.type==="grammar"),dialogues:s.content.filter(t=>t.type==="dialogue")}))}))})),v=document.getElementById("reference-root");v.innerHTML=`
+import{g as m,b as u}from"./header-tpRfakPe.js";import{i as f}from"./reveal-BBM4lrTc.js";import{C as h}from"./curriculum-DIRFPJHL.js";const l=m();document.body.dataset.theme=l.theme;u(document.getElementById("header-root"),l);const o=h.months.map(e=>({label:`Month ${e.id}: ${e.title}`,color:e.color,weeks:[1,2,3,4].map(a=>({week:a,lessons:e.lessons.filter(s=>s.week===a).map(s=>({...s,vocabulary:s.content.filter(t=>t.type==="vocabulary"||t.type==="phrase"),grammar:s.content.filter(t=>t.type==="grammar"),dialogues:s.content.filter(t=>t.type==="dialogue")}))}))})),v=document.getElementById("reference-root");v.innerHTML=`
   <section class="mb-4">
     <p class="topic-chip mb-3">Reference</p>
     <h1 class="mb-2">Vocabulary & Grammar</h1>
@@ -33,7 +33,7 @@ import{f as m,i as u,C as f}from"./curriculum-DMmQFzYt.js";import{i as h}from"./
         </div>
       </section>
     `).join("")}
-  `,g(),h([...n.querySelectorAll(".reveal-item")])}function b(e){return`
+  `,g(),f([...n.querySelectorAll(".reveal-item")])}function b(e){return`
     <details class="reference-lesson" ${e.week===1&&e.lesson===1?"open":""}>
       <summary class="reference-lesson-summary">
         <span class="topic-chip">Lesson ${e.lesson}</span>

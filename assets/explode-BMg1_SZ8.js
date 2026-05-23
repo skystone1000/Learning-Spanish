@@ -1,4 +1,4 @@
-import{p as r,h as i}from"./curriculum-DMmQFzYt.js";function d(s,l,{phonetic:t="",translation:a=""}={}){if(!s)return null;if(s.innerHTML="",r())return s.innerHTML=`
+import{p as r,g as i}from"./reveal-BBM4lrTc.js";function d(s,l,{phonetic:t="",translation:a=""}={}){if(!s)return null;if(s.innerHTML="",r())return s.innerHTML=`
       <span class="spanish-text">${l}</span>
       ${t?`<span class="phonetic-chip">${t}</span>`:""}
       ${a?`<span class="translation-chip">${a}</span>`:""}
