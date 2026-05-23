@@ -1,0 +1,107 @@
+import { makeWeek } from '../lessonFactory.js'
+
+export const lessons = makeWeek({
+  month: 2,
+  week: 1,
+  topics: [
+    {
+      title: 'Subject Pronouns',
+      focus: 'People doing the action',
+      items: [
+        ['yo', 'I', 'yo'],
+        ['tú', 'you informal', 'too'],
+        ['él', 'he', 'el'],
+        ['ella', 'she', 'EH-ya'],
+        ['usted', 'you formal', 'oos-TED'],
+        ['nosotros', 'we', 'no-SO-tros'],
+        ['vosotros', 'you all informal in Spain', 'bo-SO-tros'],
+        ['ellos', 'they masculine or mixed', 'EH-yos'],
+        ['ustedes', 'you all', 'oos-TE-des'],
+      ],
+      grammar: {
+        title: 'Pronouns Are Often Optional',
+        explanation: 'Spanish verb endings usually show the subject, so pronouns are used for clarity or emphasis.',
+      },
+      sentence: 'Yo estudio español',
+      translation: 'I study Spanish',
+      dialogue: ['Yo soy Ana.', 'Tú eres Carlos.', 'Nosotros estudiamos español.'],
+    },
+    {
+      title: 'Ser Conjugation',
+      focus: 'Permanent identity',
+      items: [
+        ['soy', 'I am', 'soy'],
+        ['eres', 'you are', 'EH-res'],
+        ['es', 'he, she, or it is', 'es'],
+        ['somos', 'we are', 'SO-mos'],
+        ['sois', 'you all are in Spain', 'soys'],
+        ['son', 'they or you all are', 'son'],
+      ],
+      grammar: {
+        title: 'Ser Is For Identity',
+        explanation: 'Use ser for names, origins, nationality, profession, and lasting characteristics.',
+      },
+      sentence: 'Soy estudiante',
+      translation: 'I am a student',
+      dialogue: ['Soy de México.', 'Ella es profesora.', 'Nosotros somos amigos.'],
+    },
+    {
+      title: 'Describing With Ser',
+      focus: 'Core personality and identity',
+      items: [
+        ['alto', 'tall', 'AL-to'],
+        ['bajo', 'short', 'BA-ho'],
+        ['inteligente', 'intelligent', 'een-te-lee-HEN-te'],
+        ['simpático', 'friendly', 'seem-PA-tee-ko'],
+        ['amigo', 'friend', 'a-MEE-go'],
+        ['serio', 'serious', 'SE-ryo'],
+      ],
+      grammar: {
+        title: 'Adjectives Can Change',
+        explanation: 'Many adjectives ending in -o change to -a when describing feminine nouns or people.',
+      },
+      sentence: 'Ella es simpática',
+      translation: 'She is friendly',
+      dialogue: ['Carlos es alto.', 'María es inteligente.', 'Somos amigos.'],
+    },
+    {
+      title: 'Nationalities',
+      focus: 'Where people are from',
+      items: [
+        ['americano', 'American', 'a-me-ree-KA-no'],
+        ['español', 'Spanish', 'es-pa-NYOL'],
+        ['mexicano', 'Mexican', 'me-hee-KA-no'],
+        ['argentino', 'Argentinian', 'ar-hen-TEE-no'],
+        ['chino', 'Chinese', 'CHEE-no'],
+        ['francés', 'French', 'fran-SES'],
+        ['inglés', 'English', 'een-GLES'],
+      ],
+      grammar: {
+        title: 'Nationalities Are Adjectives',
+        explanation: 'Nationality words usually change for gender: mexicano, mexicana; español, española.',
+      },
+      sentence: 'Soy mexicano',
+      translation: 'I am Mexican',
+      dialogue: ['¿Eres española?', 'No, soy mexicana.', 'Mi amigo es francés.'],
+    },
+    {
+      title: 'Professions',
+      focus: 'Jobs and roles',
+      items: [
+        ['médico', 'doctor', 'ME-dee-ko'],
+        ['maestro', 'teacher', 'ma-ES-tro'],
+        ['estudiante', 'student', 'es-too-DYAN-te'],
+        ['ingeniero', 'engineer', 'een-he-NYE-ro'],
+        ['abogado', 'lawyer', 'a-bo-GA-do'],
+        ['cocinero', 'cook', 'ko-see-NE-ro'],
+      ],
+      grammar: {
+        title: 'Professions Often Drop A',
+        explanation: 'Spanish commonly says Soy estudiante or Soy médico without un or una when naming a profession.',
+      },
+      sentence: 'Soy estudiante',
+      translation: 'I am a student',
+      dialogue: ['¿Cuál es tu profesión?', 'Soy ingeniera.', 'Mi hermano es cocinero.'],
+    },
+  ],
+})

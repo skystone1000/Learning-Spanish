@@ -1,0 +1,106 @@
+import { makeWeek } from '../lessonFactory.js'
+
+export const lessons = makeWeek({
+  month: 2,
+  week: 2,
+  topics: [
+    {
+      title: 'Estar Conjugation',
+      focus: 'Temporary state and location',
+      items: [
+        ['estoy', 'I am', 'es-TOY'],
+        ['estás', 'you are', 'es-TAS'],
+        ['está', 'he, she, or it is', 'es-TA'],
+        ['estamos', 'we are', 'es-TA-mos'],
+        ['estáis', 'you all are in Spain', 'es-TICE'],
+        ['están', 'they or you all are', 'es-TAN'],
+      ],
+      grammar: {
+        title: 'Estar Is For State And Place',
+        explanation: 'Use estar for temporary feelings, conditions, and locations.',
+      },
+      sentence: 'Estoy en casa',
+      translation: 'I am at home',
+      dialogue: ['¿Dónde estás?', 'Estoy en casa.', 'Mi hermana está en la escuela.'],
+    },
+    {
+      title: 'Ser Vs Estar',
+      focus: 'Identity compared with state',
+      items: [
+        ['soy alto', 'I am tall', 'soy AL-to'],
+        ['estoy cansado', 'I am tired', 'es-TOY kan-SA-do'],
+        ['es profesor', 'he is a teacher', 'es pro-fe-SOR'],
+        ['está ocupado', 'he is busy', 'es-TA o-koo-PA-do'],
+      ],
+      grammar: {
+        title: 'Identity Or Situation',
+        explanation: 'Ser describes what something is. Estar describes how or where it is right now.',
+      },
+      sentence: 'Soy estudiante y estoy ocupado',
+      translation: 'I am a student and I am busy',
+      dialogue: ['Soy tranquila.', 'Hoy estoy nerviosa.', 'Ser y estar no son iguales.'],
+    },
+    {
+      title: 'Emotions With Estar',
+      focus: 'How you feel right now',
+      items: [
+        ['feliz', 'happy', 'fe-LEES'],
+        ['triste', 'sad', 'TREES-te'],
+        ['cansado', 'tired', 'kan-SA-do'],
+        ['enfermo', 'sick', 'en-FER-mo'],
+        ['ocupado', 'busy', 'o-koo-PA-do'],
+        ['nervioso', 'nervous', 'ner-BYO-so'],
+        ['emocionado', 'excited', 'e-mo-syo-NA-do'],
+      ],
+      grammar: {
+        title: 'Feelings Use Estar',
+        explanation: 'Most emotions are temporary states, so use estar: estoy feliz, estás triste.',
+      },
+      sentence: 'Estoy feliz hoy',
+      translation: 'I am happy today',
+      dialogue: ['¿Cómo estás?', 'Estoy cansado pero feliz.', 'Yo estoy emocionada.'],
+    },
+    {
+      title: 'Adjective Agreement',
+      focus: 'Masculine, feminine, and neutral endings',
+      items: [
+        ['bueno', 'good', 'BWE-no'],
+        ['buena', 'good feminine', 'BWE-na'],
+        ['nuevo', 'new', 'NWE-bo'],
+        ['pequeña', 'small feminine', 'pe-KE-nya'],
+        ['grande', 'big', 'GRAN-de'],
+        ['joven', 'young', 'HO-ben'],
+      ],
+      grammar: {
+        title: 'Adjectives Agree',
+        explanation: 'Adjectives usually match the noun in gender and number. Grande and joven do not change for gender.',
+      },
+      sentence: 'La casa es pequeña',
+      translation: 'The house is small',
+      dialogue: ['El coche es nuevo.', 'La mesa es nueva.', 'El perro es grande.'],
+    },
+    {
+      title: 'More Adjectives',
+      focus: 'Useful opposites',
+      items: [
+        ['fácil', 'easy', 'FA-seel'],
+        ['difícil', 'difficult', 'dee-FEE-seel'],
+        ['rápido', 'fast', 'RA-pee-do'],
+        ['lento', 'slow', 'LEN-to'],
+        ['caro', 'expensive', 'KA-ro'],
+        ['barato', 'cheap', 'ba-RA-to'],
+        ['limpio', 'clean', 'LEEM-pyo'],
+        ['sucio', 'dirty', 'SOO-syo'],
+        ['abierto', 'open', 'a-BYER-to'],
+        ['cerrado', 'closed', 'se-RRA-do'],
+      ],
+      grammar: {
+        title: 'Adjectives Usually Follow Nouns',
+        explanation: 'Spanish often places adjectives after nouns: una casa grande, un libro difícil.',
+      },
+      sentence: 'El restaurante está cerrado',
+      translation: 'The restaurant is closed',
+      dialogue: ['El ejercicio es fácil.', 'La puerta está abierta.', 'El hotel es caro.'],
+    },
+  ],
+})

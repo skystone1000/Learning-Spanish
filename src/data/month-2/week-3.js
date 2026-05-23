@@ -1,0 +1,108 @@
+import { makeWeek } from '../lessonFactory.js'
+
+export const lessons = makeWeek({
+  month: 2,
+  week: 3,
+  topics: [
+    {
+      title: 'Family',
+      focus: 'Family members',
+      items: [
+        ['madre', 'mother', 'MA-dre'],
+        ['padre', 'father', 'PA-dre'],
+        ['hermano', 'brother', 'er-MA-no'],
+        ['hermana', 'sister', 'er-MA-na'],
+        ['hijo', 'son', 'EE-ho'],
+        ['hija', 'daughter', 'EE-ha'],
+        ['abuelo', 'grandfather', 'a-BWE-lo'],
+        ['abuela', 'grandmother', 'a-BWE-la'],
+        ['primo', 'cousin', 'PREE-mo'],
+        ['esposo', 'husband', 'es-PO-so'],
+      ],
+      grammar: {
+        title: 'Family Words Change Gender',
+        explanation: 'Many family words use -o for masculine and -a for feminine: hermano, hermana.',
+      },
+      sentence: 'Mi madre es profesora',
+      translation: 'My mother is a teacher',
+      dialogue: ['Tengo una hermana.', 'Mi abuelo vive aquí.', 'Mi primo es estudiante.'],
+    },
+    {
+      title: 'Possessive Adjectives',
+      focus: 'My, your, and our',
+      items: [
+        ['mi', 'my', 'mee'],
+        ['tu', 'your informal', 'too'],
+        ['su', 'his, her, your formal, or their', 'soo'],
+        ['nuestro', 'our masculine', 'NWES-tro'],
+        ['nuestra', 'our feminine', 'NWES-tra'],
+        ['vuestro', 'your plural in Spain', 'BWES-tro'],
+        ['sus', 'their or your plural', 'soos'],
+      ],
+      grammar: {
+        title: 'Possessives Match The Thing Owned',
+        explanation: 'Mi and tu become mis and tus with plural nouns. Nuestro changes for gender and number.',
+      },
+      sentence: 'Mi padre y tu madre',
+      translation: 'My father and your mother',
+      dialogue: ['Mi hermano se llama Luis.', 'Tu madre es simpática.', 'Nuestra casa es pequeña.'],
+    },
+    {
+      title: 'Describing Family',
+      focus: 'Short family descriptions',
+      items: [
+        ['profesora', 'female teacher', 'pro-fe-SO-ra'],
+        ['mayor', 'older', 'ma-YOR'],
+        ['menor', 'younger', 'me-NOR'],
+        ['muy', 'very', 'mwee'],
+        ['dos hermanos', 'two siblings or brothers', 'dos er-MA-nos'],
+      ],
+      grammar: {
+        title: 'Muy Intensifies Adjectives',
+        explanation: 'Put muy before an adjective to mean very: muy alto, muy inteligente.',
+      },
+      sentence: 'Tengo dos hermanos',
+      translation: 'I have two siblings',
+      dialogue: ['Mi madre es profesora.', 'Tengo dos hermanos.', 'Mi abuelo es muy mayor.'],
+    },
+    {
+      title: 'Tener',
+      focus: 'The verb to have',
+      items: [
+        ['tengo', 'I have', 'TEN-go'],
+        ['tienes', 'you have', 'TYE-nes'],
+        ['tiene', 'he or she has', 'TYE-ne'],
+        ['tenemos', 'we have', 'te-NE-mos'],
+        ['tenéis', 'you all have in Spain', 'te-NAYS'],
+        ['tienen', 'they have', 'TYE-nen'],
+      ],
+      grammar: {
+        title: 'Tener Is Irregular',
+        explanation: 'Tener does not follow a regular pattern in the yo form: yo tengo.',
+      },
+      sentence: 'Tengo una hermana',
+      translation: 'I have a sister',
+      dialogue: ['¿Tienes hermanos?', 'Sí, tengo uno.', 'Mi hermana tiene veinte años.'],
+    },
+    {
+      title: 'Physical Descriptions',
+      focus: 'Hair, eyes, and features',
+      items: [
+        ['alto', 'tall', 'AL-to'],
+        ['bajo', 'short', 'BA-ho'],
+        ['ojos azules', 'blue eyes', 'O-hos a-SOO-les'],
+        ['ojos marrones', 'brown eyes', 'O-hos ma-RRO-nes'],
+        ['pelo negro', 'black hair', 'PE-lo NE-gro'],
+        ['pelo rubio', 'blond hair', 'PE-lo ROO-byo'],
+        ['barba', 'beard', 'BAR-ba'],
+      ],
+      grammar: {
+        title: 'Use Tener For Features',
+        explanation: 'Spanish often uses tener for physical features: tiene ojos verdes, tiene barba.',
+      },
+      sentence: 'Tiene ojos verdes',
+      translation: 'He or she has green eyes',
+      dialogue: ['Mi padre es alto.', 'Tiene pelo negro.', 'Mi hermano tiene barba.'],
+    },
+  ],
+})

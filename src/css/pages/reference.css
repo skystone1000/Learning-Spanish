@@ -1,0 +1,206 @@
+.reference-layout {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.reference-tabs {
+  display: grid;
+  gap: 0.5rem;
+  position: sticky;
+  top: 84px;
+}
+
+.reference-tab {
+  min-height: 44px;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--color-surface-3);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-weight: 800;
+  text-align: left;
+}
+
+.reference-tab.active {
+  border-color: var(--color-primary);
+  background: var(--color-surface-2);
+}
+
+.reference-panel {
+  min-height: 560px;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.reference-panel-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: start;
+}
+
+.reference-panel-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.reference-week {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.reference-week-title {
+  margin: 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-surface-3);
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+}
+
+.reference-lessons {
+  display: grid;
+  gap: 1rem;
+}
+
+.reference-lesson {
+  padding: 1rem;
+  border: 1px solid var(--color-surface-3);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+}
+
+.reference-lesson[open] {
+  border-color: color-mix(in srgb, var(--color-primary) 50%, var(--color-surface-3));
+}
+
+.reference-lesson-summary {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
+  gap: 0.75rem;
+  align-items: start;
+  cursor: pointer;
+  list-style: none;
+}
+
+.reference-lesson-summary::-webkit-details-marker {
+  display: none;
+}
+
+.reference-lesson-summary::after {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius);
+  background: var(--color-surface-2);
+  color: var(--color-text-muted);
+  content: '+';
+  font-weight: 900;
+}
+
+.reference-lesson[open] .reference-lesson-summary::after {
+  content: '-';
+}
+
+.reference-lesson-count {
+  min-width: 32px;
+  min-height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--color-secondary) 18%, transparent);
+  color: var(--color-secondary);
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.reference-lesson-body {
+  display: grid;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.reference-section-title {
+  margin: 0 0 0.6rem;
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.reference-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.reference-item {
+  min-height: 94px;
+  display: grid;
+  align-content: start;
+  gap: 0.3rem;
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  background: var(--color-surface-2);
+}
+
+.reference-item-wide {
+  min-height: auto;
+}
+
+.reference-grammar-list,
+.reference-dialogue-list {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.reference-examples {
+  display: grid;
+  gap: 0.2rem;
+  padding-top: 0.35rem;
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+}
+
+@media (max-width: 860px) {
+  .reference-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .reference-tabs {
+    position: static;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .reference-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .reference-panel-header {
+    display: grid;
+  }
+
+  .reference-panel-actions {
+    justify-content: start;
+  }
+}
+
+@media (max-width: 560px) {
+  .reference-tabs,
+  .reference-list {
+    grid-template-columns: 1fr;
+  }
+
+  .reference-lesson-summary {
+    grid-template-columns: minmax(0, 1fr) auto auto;
+  }
+
+  .reference-lesson-summary .topic-chip {
+    grid-column: 1 / -1;
+  }
+}

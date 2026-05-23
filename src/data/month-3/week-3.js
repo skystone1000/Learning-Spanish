@@ -1,0 +1,108 @@
+import { makeWeek } from '../lessonFactory.js'
+
+export const lessons = makeWeek({
+  month: 3,
+  week: 3,
+  topics: [
+    {
+      title: 'Food',
+      focus: 'Staple foods',
+      items: [
+        ['el pan', 'bread', 'el pan'],
+        ['la leche', 'milk', 'la LE-che'],
+        ['el huevo', 'egg', 'el WE-bo'],
+        ['la carne', 'meat', 'la KAR-ne'],
+        ['el pollo', 'chicken', 'el PO-yo'],
+        ['el pescado', 'fish', 'el pes-KA-do'],
+        ['el arroz', 'rice', 'el a-RROS'],
+        ['la pasta', 'pasta', 'la PAS-ta'],
+        ['la fruta', 'fruit', 'la FROO-ta'],
+        ['la verdura', 'vegetable', 'la ber-DOO-ra'],
+      ],
+      grammar: {
+        title: 'Food Keeps Articles',
+        explanation: 'Learn food nouns with el or la so you remember gender.',
+      },
+      sentence: 'Quiero arroz con pollo',
+      translation: 'I want rice with chicken',
+      dialogue: ['¿Qué comes?', 'Como pan y fruta.', 'Quiero pollo con arroz.'],
+    },
+    {
+      title: 'Drinks',
+      focus: 'Ordering beverages',
+      items: [
+        ['el agua', 'water', 'el A-gwa', 'Uses el for sound, but agua is feminine'],
+        ['el café', 'coffee', 'el ka-FE'],
+        ['el té', 'tea', 'el te'],
+        ['el jugo', 'juice', 'el HOO-go'],
+        ['la cerveza', 'beer', 'la ser-BE-sa'],
+        ['el vino', 'wine', 'el BEE-no'],
+        ['el refresco', 'soft drink', 'el re-FRES-ko'],
+      ],
+      grammar: {
+        title: 'Quiero For Ordering',
+        explanation: 'Quiero plus a noun is direct and common for simple ordering.',
+      },
+      sentence: 'Quiero un café',
+      translation: 'I want a coffee',
+      dialogue: ['¿Qué quiere beber?', 'Quiero agua, por favor.', 'Yo quiero café.'],
+    },
+    {
+      title: 'Restaurant Phrases',
+      focus: 'Polite ordering',
+      items: [
+        ['¿Me puede traer?', 'Can you bring me?', 'me PWE-de tra-ER'],
+        ['Quiero pedir', 'I want to order', 'KYE-ro pe-DEER'],
+        ['Para mí', 'For me', 'PA-ra mee'],
+        ['La cuenta, por favor', 'The bill, please', 'la KWEN-ta por fa-VOR'],
+        ['¿Está incluido el servicio?', 'Is service included?', 'es-TA een-kloo-EE-do el ser-BEE-syo'],
+      ],
+      grammar: {
+        title: 'Polite Requests',
+        explanation: '¿Me puede traer...? is a useful polite restaurant formula.',
+      },
+      sentence: 'La cuenta, por favor',
+      translation: 'The bill, please',
+      dialogue: ['Buenas noches. ¿Qué quiere pedir?', 'Para mí, el pollo.', 'La cuenta, por favor.'],
+    },
+    {
+      title: 'Describing Food',
+      focus: 'Taste and temperature',
+      items: [
+        ['delicioso', 'delicious', 'de-lee-SYO-so'],
+        ['rico', 'tasty', 'REE-ko'],
+        ['picante', 'spicy', 'pee-KAN-te'],
+        ['dulce', 'sweet', 'DOOL-se'],
+        ['salado', 'salty', 'sa-LA-do'],
+        ['amargo', 'bitter', 'a-MAR-go'],
+        ['frío', 'cold', 'FREE-o'],
+        ['caliente', 'hot', 'ka-LYEN-te'],
+      ],
+      grammar: {
+        title: 'Food Descriptions Use Estar',
+        explanation: 'Use estar for how food tastes or feels right now: está delicioso, está frío.',
+      },
+      sentence: 'La sopa está caliente',
+      translation: 'The soup is hot',
+      dialogue: ['El café está caliente.', 'La fruta está dulce.', 'La salsa está picante.'],
+    },
+    {
+      title: 'Restaurant Dialogue',
+      focus: 'From reservation to bill',
+      items: [
+        ['una reserva', 'a reservation', 'OO-na re-SER-ba'],
+        ['una mesa', 'a table', 'OO-na ME-sa'],
+        ['el menú', 'the menu', 'el me-NOO'],
+        ['el camarero', 'the waiter', 'el ka-ma-RE-ro'],
+        ['pagar', 'to pay', 'pa-GAR'],
+      ],
+      grammar: {
+        title: 'Restaurant Flow',
+        explanation: 'A restaurant conversation often moves from greeting to ordering to paying.',
+      },
+      sentence: 'Tengo una reserva',
+      translation: 'I have a reservation',
+      dialogue: ['Tengo una reserva para dos.', 'Aquí está el menú.', 'Queremos pagar, por favor.'],
+    },
+  ],
+})

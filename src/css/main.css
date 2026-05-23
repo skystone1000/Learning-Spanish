@@ -1,0 +1,221 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+:root {
+  --color-primary: #2563eb;
+  --color-primary-strong: #1d4ed8;
+  --color-secondary: #f59e0b;
+  --color-accent: #14b8a6;
+  --color-success: #10b981;
+  --color-danger: #ef4444;
+  --color-bg: #10131f;
+  --color-surface: #181c2b;
+  --color-surface-2: #242a3d;
+  --color-surface-3: #2f374f;
+  --color-text: #f8fafc;
+  --color-text-muted: #a8b3c7;
+  --font-heading: 'Sora', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-spanish: 'Playfair Display', serif;
+  --radius: 8px;
+  --transition: 180ms ease;
+  color-scheme: dark;
+}
+
+[data-theme='light'] {
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
+  --color-surface-2: #e2e8f0;
+  --color-surface-3: #cbd5e1;
+  --color-text: #111827;
+  --color-text-muted: #64748b;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+a {
+  color: inherit;
+}
+
+.text-muted {
+  color: var(--color-text-muted) !important;
+}
+
+.spanish-text,
+.spanish-word {
+  font-family: var(--font-spanish);
+}
+
+.page-shell {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding-top: 88px;
+}
+
+.btn-primary-custom,
+.btn-secondary-custom,
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  border: 0;
+  border-radius: var(--radius);
+  font-weight: 800;
+  line-height: 1;
+  text-decoration: none;
+  transition:
+    transform var(--transition),
+    background var(--transition),
+    border-color var(--transition);
+}
+
+.btn-primary-custom {
+  padding: 0.75rem 1rem;
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+.btn-primary-custom:hover,
+.btn-primary-custom:focus-visible {
+  background: var(--color-primary-strong);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.btn-secondary-custom {
+  padding: 0.75rem 1rem;
+  background: transparent;
+  color: var(--color-text);
+  border: 1px solid var(--color-surface-3);
+}
+
+.btn-secondary-custom:hover,
+.btn-secondary-custom:focus-visible {
+  border-color: var(--color-primary);
+  color: var(--color-text);
+}
+
+.icon-btn {
+  width: 42px;
+  padding: 0;
+  background: var(--color-surface-2);
+  color: var(--color-text);
+}
+
+.icon-btn:hover,
+.icon-btn:focus-visible {
+  background: var(--color-surface-3);
+}
+
+.snap-container {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+}
+
+.snap-section {
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+  padding: 96px 16px 48px;
+  scroll-snap-align: start;
+}
+
+.section-band {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.progress-wrap {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.progress-label {
+  color: var(--color-text-muted);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.audio-play-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 38px;
+  min-height: 38px;
+  border: 1px solid var(--color-surface-3);
+  border-radius: var(--radius);
+  background: var(--color-surface-2);
+  color: var(--color-text);
+}
+
+.audio-play-btn:hover,
+.audio-play-btn:focus-visible {
+  border-color: var(--color-primary);
+}
+
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 10000;
+  transform: translateY(-140%);
+  background: var(--color-secondary);
+  color: #111827;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius);
+  font-weight: 800;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+@media (max-width: 720px) {
+  .snap-section {
+    min-height: auto;
+    padding-top: 88px;
+    scroll-snap-align: none;
+  }
+
+  .snap-container {
+    height: auto;
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+}

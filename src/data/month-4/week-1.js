@@ -1,0 +1,106 @@
+import { makeWeek } from '../lessonFactory.js'
+
+export const lessons = makeWeek({
+  month: 4,
+  week: 1,
+  topics: [
+    {
+      title: 'Places In Town',
+      focus: 'Essential locations',
+      items: [
+        ['el banco', 'the bank', 'el BAN-ko'],
+        ['la tienda', 'the store', 'la TYEN-da'],
+        ['el restaurante', 'the restaurant', 'el res-taw-RAN-te'],
+        ['el hospital', 'the hospital', 'el os-pee-TAL'],
+        ['la escuela', 'the school', 'la es-KWE-la'],
+        ['el parque', 'the park', 'el PAR-ke'],
+        ['la iglesia', 'the church', 'la ee-GLE-sya'],
+        ['el aeropuerto', 'the airport', 'el a-e-ro-PWER-to'],
+        ['la estación', 'the station', 'la es-ta-SYON'],
+        ['el museo', 'the museum', 'el moo-SE-o'],
+      ],
+      grammar: {
+        title: 'Places Use Articles',
+        explanation: 'Use el or la with places, and learn each location with its article.',
+      },
+      sentence: 'Voy al banco',
+      translation: 'I am going to the bank',
+      dialogue: ['¿Dónde está el banco?', 'Está cerca del parque.', 'Voy al restaurante.'],
+    },
+    {
+      title: 'Ir',
+      focus: 'The verb to go',
+      items: [
+        ['voy', 'I go', 'voy'],
+        ['vas', 'you go', 'bas'],
+        ['va', 'he or she goes', 'ba'],
+        ['vamos', 'we go', 'BA-mos'],
+        ['vais', 'you all go in Spain', 'bice'],
+        ['van', 'they go', 'ban'],
+      ],
+      grammar: {
+        title: 'Ir Is Irregular',
+        explanation: 'Ir is short and very irregular, but it is one of the most useful Spanish verbs.',
+      },
+      sentence: 'Vamos al parque',
+      translation: 'We are going to the park',
+      dialogue: ['¿Adónde vas?', 'Voy al museo.', 'Nosotros vamos al parque.'],
+    },
+    {
+      title: 'Ir A Plus Place',
+      focus: 'Going to a location',
+      items: [
+        ['al banco', 'to the bank', 'al BAN-ko'],
+        ['al parque', 'to the park', 'al PAR-ke'],
+        ['a la tienda', 'to the store', 'a la TYEN-da'],
+        ['a la escuela', 'to the school', 'a la es-KWE-la'],
+        ['¿Adónde vas?', 'Where are you going?', 'a-DON-de bas'],
+      ],
+      grammar: {
+        title: 'Al Means A Plus El',
+        explanation: 'A plus el contracts to al: voy al banco, vamos al parque.',
+      },
+      sentence: 'Voy al banco',
+      translation: 'I am going to the bank',
+      dialogue: ['Voy a la tienda.', 'Ella va al hospital.', '¿Adónde vas?'],
+    },
+    {
+      title: 'Near Future',
+      focus: 'Ir a plus infinitive',
+      items: [
+        ['voy a comer', 'I am going to eat', 'voy a ko-MER'],
+        ['vas a estudiar', 'you are going to study', 'bas a es-too-DYAR'],
+        ['va a viajar', 'he or she is going to travel', 'ba a bya-HAR'],
+        ['vamos a trabajar', 'we are going to work', 'BA-mos a tra-ba-HAR'],
+      ],
+      grammar: {
+        title: 'Future With Ir A',
+        explanation: 'Use a form of ir plus a plus an infinitive to talk about the near future.',
+      },
+      sentence: 'Voy a estudiar mañana',
+      translation: 'I am going to study tomorrow',
+      dialogue: ['¿Vas a estudiar?', 'Sí, voy a estudiar.', 'Vamos a viajar mañana.'],
+    },
+    {
+      title: 'Transportation',
+      focus: 'Ways to get around',
+      items: [
+        ['el autobús', 'the bus', 'el ow-to-BOOS'],
+        ['el metro', 'the subway', 'el ME-tro'],
+        ['el coche', 'the car', 'el KO-che'],
+        ['el avión', 'the airplane', 'el a-BYON'],
+        ['el tren', 'the train', 'el tren'],
+        ['el taxi', 'the taxi', 'el TAK-see'],
+        ['la bicicleta', 'the bicycle', 'la bee-see-KLE-ta'],
+        ['a pie', 'on foot', 'a pye'],
+      ],
+      grammar: {
+        title: 'En For Transportation',
+        explanation: 'Use en with most vehicles: en autobús, en tren, en taxi. Use a pie for on foot.',
+      },
+      sentence: 'Voy en tren',
+      translation: 'I go by train',
+      dialogue: ['Voy al trabajo en metro.', 'Ella va en bicicleta.', 'Nosotros vamos a pie.'],
+    },
+  ],
+})

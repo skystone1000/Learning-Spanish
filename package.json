@@ -1,0 +1,23 @@
+{
+  "name": "learning-spanish",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:ui": "vitest --ui"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "gsap": "^3.12.5"
+  },
+  "devDependencies": {
+    "@vitest/ui": "^1.6.0",
+    "jsdom": "^24.1.1",
+    "vite": "^5.4.0",
+    "vitest": "^1.6.0"
+  }
+}
