@@ -4,13 +4,13 @@ import { prefersReducedMotion } from './reducedMotion.js'
 
 gsap.registerPlugin(ScrollTrigger)
 
-export function initSnapScroll(sections) {
+export function initSnapScroll(sections, { scroller = null } = {}) {
   if (prefersReducedMotion()) return
 
   sections.forEach((section) => {
     const children = [...section.children]
     gsap.set(children, { opacity: 0, y: 36 })
-    ScrollTrigger.create({
+    const triggerConfig = {
       trigger: section,
       start: 'top 72%',
       once: true,
@@ -23,6 +23,10 @@ export function initSnapScroll(sections) {
           ease: 'power3.out',
         })
       },
-    })
+    }
+    if (scroller) triggerConfig.scroller = scroller
+    ScrollTrigger.create(triggerConfig)
   })
+
+  ScrollTrigger.refresh()
 }

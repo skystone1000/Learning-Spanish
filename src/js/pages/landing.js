@@ -5,107 +5,75 @@ import { renderHeader } from '../components/header.js'
 import { initExplode } from '../animations/explode.js'
 import { initReveal } from '../animations/reveal.js'
 import { initSnapScroll } from '../animations/snapScroll.js'
-import { CURRICULUM } from '../../data/curriculum.js'
 
+const heroImage = `${import.meta.env.BASE_URL}images/landing-hero-sharp.png`
 const state = getState()
 document.body.dataset.theme = state.theme
 renderHeader(document.getElementById('header-root'), state)
 
 document.getElementById('snap-hero').innerHTML = `
-  <div class="section-band hero-layout">
-    <div>
-      <h1 id="hero-word" class="hero-word"></h1>
-      <p class="hero-sub mb-4">A six-month beginner path from first greetings to real conversations, with quick lessons, practice rounds, and a pressure-free story mode.</p>
-      <div class="toolbar">
+  <div class="landing-hero-bg" aria-hidden="true">
+    <img src="${heroImage}" alt="" />
+  </div>
+  <div class="section-band landing-hero">
+    <p class="landing-eyebrow">Immersion Protocol Activated</p>
+    <h1 id="hero-word" class="hero-word"></h1>
+    <p class="hero-pronunciation">OH-lah • Hello</p>
+    <p class="hero-sub">Enter a focused six-month Spanish journey built for cinematic flow, rapid recall, and adult learners who want momentum without clutter.</p>
+    <div class="toolbar justify-content-center">
         <a href="dashboard.html" class="btn-primary-custom">Start Learning</a>
         <a href="reference.html" class="btn-secondary-custom">Open Reference</a>
-      </div>
     </div>
-    <div class="learning-visual" aria-label="Spanish learning progress preview">
-      <div class="visual-board">
-        ${[
-          ['Hola', 'Hello', 92],
-          ['Gracias', 'Thank you', 78],
-          ['Voy al banco', 'I am going to the bank', 64],
-          ['Hablaba', 'I used to speak', 42],
-        ].map(([spanish, english, width]) => `
-          <div class="visual-row">
-            <div>
-              <div class="visual-word">${spanish}</div>
-              <div class="text-muted small">${english}</div>
-            </div>
-            <div class="visual-meter"><span style="width:${width}%"></span></div>
-          </div>
-        `).join('')}
-      </div>
-    </div>
+    <span class="material-symbols-outlined landing-scroll-cue" aria-hidden="true">keyboard_arrow_down</span>
   </div>
 `
-initExplode(document.getElementById('hero-word'), '¡Hola!', { phonetic: 'OH-lah', translation: 'Hello' })
+initExplode(document.getElementById('hero-word'), '¡Hola!')
 
 document.getElementById('snap-how').innerHTML = `
   <div class="section-band">
-    <h2 class="mb-4">Daily Rhythm</h2>
-    <div class="row g-3">
+    <div class="landing-section-heading reveal-item">
+      <h2>The Architecture of Fluency</h2>
+      <p>Engineered routines that move Spanish from recognition to reflex.</p>
+    </div>
+    <div class="method-grid">
       ${[
-        ['1', 'Learn', 'Meet vocabulary, grammar, and mini-dialogues in short focused cards.'],
-        ['2', 'Practice', 'Answer listening, matching, typing, and sentence-building prompts.'],
-        ['3', 'Return', 'Keep your streak alive and review every month from the reference guide.'],
-      ].map(([num, title, copy]) => `
-        <div class="col-md-4 reveal-item">
-          <div class="how-step">
-            <div class="step-num">${num}</div>
-            <h3 class="h5">${title}</h3>
-            <p class="text-muted mb-0">${copy}</p>
+        ['bolt', 'Quick lessons', 'High-intensity intervals designed to lock vocabulary into working memory without draining your day.'],
+        ['target', 'Practice rounds', 'Recall sessions mix listening, matching, typing, and sentence assembly around your weakest points.'],
+        ['menu_book', 'Story mode', 'A pressure-free path turns the same curriculum into an immersive reading flow.'],
+      ].map(([icon, title, copy], index) => `
+        <article class="method-card reveal-item ${index === 1 ? 'method-card-raised' : ''}">
+          <div class="method-icon"><span class="material-symbols-outlined">${icon}</span></div>
+          <div>
+            <h3>${title}</h3>
+            <p>${copy}</p>
           </div>
-        </div>
+        </article>
       `).join('')}
-    </div>
-  </div>
-`
-
-document.getElementById('snap-curriculum').innerHTML = `
-  <div class="section-band">
-    <h2 class="mb-4">Six-Month Roadmap</h2>
-    <div class="row g-3">
-      ${CURRICULUM.months.map((month) => `
-        <div class="col-md-4 reveal-item">
-          <a class="month-preview-card d-block text-decoration-none" href="module.html#${month.id}" style="border-left-color:${month.color}">
-            <div class="small fw-bold" style="color:${month.color}">Month ${month.id}</div>
-            <h3 class="h5 mb-1">${month.title}</h3>
-            <p class="text-muted mb-0">${month.subtitle}</p>
-          </a>
-        </div>
-      `).join('')}
-    </div>
-  </div>
-`
-
-document.getElementById('snap-modes').innerHTML = `
-  <div class="section-band">
-    <h2 class="mb-4">Choose Your Pace</h2>
-    <div class="d-flex gap-3 flex-wrap">
-      <div class="mode-panel reveal-item">
-        <span class="topic-chip mb-3">Game Mode</span>
-        <h3 class="h5">XP, hearts, locked progression</h3>
-        <p class="text-muted mb-0">Move through lessons in order, protect your hearts, and unlock each month as you finish the last lesson of the previous one.</p>
-      </div>
-      <div class="mode-panel reveal-item">
-        <span class="topic-chip mb-3">Story Mode</span>
-        <h3 class="h5">All lessons, no quizzes</h3>
-        <p class="text-muted mb-0">Read the same curriculum as a guided story with animations and no scoring pressure.</p>
-      </div>
     </div>
   </div>
 `
 
 document.getElementById('snap-cta').innerHTML = `
-  <div class="section-band text-center">
-    <h2 class="mb-3">Begin with a single greeting.</h2>
-    <p class="hero-sub mx-auto mb-4">The first lesson starts with Hola and ends with your first practice round.</p>
-    <a href="lesson.html#m1-w1-l1" class="btn-primary-custom">Open Lesson 1</a>
+  <div class="landing-cta-rings" aria-hidden="true"></div>
+  <div class="section-band landing-cta reveal-item">
+    <h2>Commit to the <span>Process.</span></h2>
+    <p>Your six-month journey awaits. Focused execution, cinematic pacing, and verifiable progress.</p>
+    <a href="lesson.html#m1-w1-l1" class="btn-primary-custom btn-cta">
+      Join Now
+      <span class="material-symbols-outlined">rocket_launch</span>
+    </a>
   </div>
+  <footer class="landing-footer">
+    <strong>Aprende</strong>
+    <nav aria-label="Landing footer">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="reference.html">Reference</a>
+      <a href="module.html#1">Journey</a>
+    </nav>
+    <span>© 2026 Aprende Language Systems.</span>
+  </footer>
 `
 
-initSnapScroll([...document.querySelectorAll('.snap-section')])
-initReveal([...document.querySelectorAll('.reveal-item')])
+const snapContainer = document.getElementById('snap-container')
+initSnapScroll([...document.querySelectorAll('.snap-section')], { scroller: snapContainer })
+initReveal([...document.querySelectorAll('.reveal-item')], { scroller: snapContainer })

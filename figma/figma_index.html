@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html class="dark snap-y snap-mandatory" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aprende - Spanish Learning</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&amp;family=Geist:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#b4c5ff",
+                    "on-background": "#dae2fd",
+                    "on-primary-container": "#eeefff",
+                    "surface-container-high": "#222a3d",
+                    "tertiary-fixed": "#e0e3e5",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "error": "#ffb4ab",
+                    "primary-container": "#2563eb",
+                    "on-primary": "#002a78",
+                    "on-surface-variant": "#c3c6d7",
+                    "inverse-surface": "#dae2fd",
+                    "tertiary": "#c4c7c9",
+                    "surface-tint": "#b4c5ff",
+                    "surface": "#0b1326",
+                    "primary-fixed": "#dbe1ff",
+                    "on-secondary": "#003731",
+                    "on-tertiary-fixed-variant": "#444749",
+                    "on-error": "#690005",
+                    "surface-variant": "#2d3449",
+                    "on-secondary-fixed-variant": "#005048",
+                    "secondary": "#4fdbc8",
+                    "secondary-container": "#04b4a2",
+                    "on-primary-fixed": "#00174b",
+                    "inverse-on-surface": "#283044",
+                    "background": "#0b1326",
+                    "error-container": "#93000a",
+                    "outline-variant": "#434655",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "on-secondary-fixed": "#00201c",
+                    "surface-dim": "#0b1326",
+                    "surface-container": "#171f33",
+                    "tertiary-fixed-dim": "#c4c7c9",
+                    "outline": "#8d90a0",
+                    "surface-container-highest": "#2d3449",
+                    "secondary-fixed": "#71f8e4",
+                    "inverse-primary": "#0053db",
+                    "on-tertiary-fixed": "#191c1e",
+                    "on-tertiary": "#2d3133",
+                    "surface-container-low": "#131b2e",
+                    "on-surface": "#dae2fd",
+                    "surface-bright": "#31394d",
+                    "secondary-fixed-dim": "#4fdbc8",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-container": "#003f38",
+                    "on-tertiary-container": "#eff1f3",
+                    "tertiary-container": "#6b6e70",
+                    "surface-container-lowest": "#060e20"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "container-max": "1280px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "64px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "display-xl": ["Plus Jakarta Sans"],
+                    "label-caps": ["Geist"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-xl": ["96px", {"lineHeight": "100px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        html, body {
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+        }
+
+        .snap-section {
+            scroll-snap-align: start;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Hide scrollbar for a cleaner cinematic feel while keeping functionality */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Glassmorphism utilities */
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(51, 65, 85, 0.8);
+        }
+
+        /* Kinetic Hover Effects */
+        .btn-primary {
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            box-shadow: 0 0 20px rgba(79, 219, 200, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .tilt-card {
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease;
+            border-top: 1px solid rgba(180, 197, 255, 0.1);
+        }
+        .tilt-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-top: 1px solid rgba(180, 197, 255, 0.4);
+        }
+
+        /* Animated Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.08) 0%, rgba(11, 19, 38, 0) 60%);
+            animation: rotateGradient 25s linear infinite;
+            z-index: -1;
+            pointer-events: none;
+        }
+        @keyframes rotateGradient {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden relative">
+<!-- Immersion Overlay -->
+<div class="fixed inset-0 bg-background/90 backdrop-blur-lg z-[100] transition-opacity duration-[1500ms] ease-out flex items-center justify-center pointer-events-none" id="immersion-overlay">
+</div>
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-0 w-full z-50 bg-surface/40 backdrop-blur-xl border-b border-outline-variant/20 transition-all duration-300">
+<div class="flex justify-between items-center h-16 px-margin-desktop max-w-container-max mx-auto">
+<!-- Brand -->
+<a class="font-display-lg text-headline-lg font-extrabold tracking-tighter text-primary" href="#">Aprende</a>
+<!-- Navigation Links -->
+<div class="hidden md:flex items-center gap-8">
+<!-- Dashboard (Active based on Intent) -->
+<a class="font-body-md text-primary font-bold border-b-2 border-primary pb-1 hover:text-primary transition-colors duration-200" href="#">Dashboard</a>
+<a class="font-body-md text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Reference</a>
+<a class="font-body-md text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Journey</a>
+</div>
+<!-- Trailing Icons / Actions -->
+<div class="flex items-center gap-4">
+<button aria-label="Streak" class="text-on-surface-variant hover:text-primary transition-colors duration-200">
+<span class="material-symbols-outlined" data-icon="local_fire_department">local_fire_department</span>
+</button>
+<button aria-label="Achievements" class="text-on-surface-variant hover:text-primary transition-colors duration-200">
+<span class="material-symbols-outlined" data-icon="military_tech">military_tech</span>
+</button>
+<!-- Avatar placeholder -->
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant/50 overflow-hidden ml-2 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm text-primary">person</span>
+</div>
+</div>
+</div>
+</nav>
+<!-- Scroll Snapping Container -->
+<main class="w-full">
+<!-- SECTION 1: Hero -->
+<section class="snap-section h-screen w-full relative flex items-center justify-center overflow-hidden" id="hero">
+<!-- Background Image Integration -->
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-background/85 z-10"></div> <!-- Atmospheric dark layer -->
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background z-10"></div>
+<img alt="Aprende Hero Background" class="w-full h-full object-cover opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzmdog8ZNcSXpLwjZ71DtZO3Y4ieM5k0F9L49itxdMMNP9qfqeuNyZI_Ar9MYIHarqaSXkVstGJV5xfyJZuwhwfnilYVPrGFaypARJUXcabIvND78hSyCvf5KEHyUzmd04HUSrudzoWxR8KsjXt7aFwqRx7IVpyez1TAdktzkSyg6bXC0g10xKK6DCp-RR-m9eVLY-ooIM3zHV9dsruLYUZDMf_hCjkushqwghNM7q9oT9rDMf3ekuRpK_NUihQZq_ZITdCVyWsiw"/>
+</div>
+<div class="relative z-20 max-w-container-max mx-auto px-margin-desktop text-center flex flex-col items-center gap-8 reveal-element">
+<div class="space-y-4">
+<p class="font-label-caps text-label-caps text-secondary tracking-widest uppercase mb-4 opacity-90">Immersion Protocol Activated</p>
+<div class="gsap-reveal opacity-0 translate-y-[30px] transition-all duration-1000 ease-out delay-300">
+<h1 class="font-display-xl text-display-xl md:text-[120px] md:leading-[110px] text-on-background font-extrabold tracking-tighter drop-shadow-2xl">
+                        ¡Hola! <br/>
+<span class="text-surface-variant text-[0.6em] md:text-[0.5em] tracking-normal block mt-2">OH-lah • Hello</span>
+</h1>
+</div>
+</div>
+<div class="gsap-reveal opacity-0 translate-y-[30px] transition-all duration-1000 ease-out delay-500">
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto text-lg/relaxed mt-6">
+                    Enter a state of flow. Master Spanish through a cinematic, high-performance six-month journey designed for adult focus and rapid acquisition.
+                </p>
+</div>
+<div class="gsap-reveal opacity-0 translate-y-[30px] transition-all duration-1000 ease-out delay-700 flex flex-col sm:flex-row gap-6 mt-10">
+<button class="btn-primary bg-primary-container text-on-primary-container font-body-md font-bold py-4 px-10 rounded-lg flex items-center justify-center gap-2">
+                        Start Learning
+                        <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<button class="group border border-outline-variant text-on-background font-body-md font-bold py-4 px-10 rounded-lg hover:border-primary-container hover:text-primary transition-all duration-300 flex items-center justify-center gap-2 bg-surface/20 backdrop-blur-sm">
+                        Open Reference
+                        <span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">menu_book</span>
+</button>
+</div>
+</div>
+<!-- Scroll indicator -->
+<div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce text-on-surface-variant opacity-50">
+<span class="material-symbols-outlined">keyboard_arrow_down</span>
+</div>
+</section>
+<!-- SECTION 2: Methodology (Bento/Glassmorphism) -->
+<section class="snap-section h-screen w-full relative flex flex-col justify-center items-center py-20" id="methodology">
+<div class="max-w-container-max w-full px-margin-desktop mx-auto">
+<div class="text-center mb-16 reveal-element">
+<h2 class="font-display-lg text-headline-lg md:text-display-lg text-primary font-bold tracking-tight">The Architecture of Fluency</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-4 max-w-2xl mx-auto">Engineered routines that bypass rote memorization, utilizing kinetic learning patterns.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="tilt-card glass-panel rounded-xl p-8 flex flex-col h-[400px] relative overflow-hidden group">
+<div class="absolute -right-10 -top-10 w-40 h-40 bg-primary-container/10 rounded-full blur-3xl group-hover:bg-primary-container/20 transition-all"></div>
+<div class="w-14 h-14 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center mb-auto">
+<span class="material-symbols-outlined text-secondary text-3xl">bolt</span>
+</div>
+<div class="mt-auto z-10">
+<h3 class="font-headline-lg text-[24px] leading-tight text-on-background font-bold mb-2">Quick lessons</h3>
+<p class="font-body-md text-on-surface-variant text-sm/relaxed">3-minute high-intensity intervals designed to lock vocabulary into short-term memory instantly.</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="tilt-card glass-panel rounded-xl p-8 flex flex-col h-[400px] relative overflow-hidden group md:-translate-y-8">
+<div class="absolute -right-10 -bottom-10 w-40 h-40 bg-secondary/10 rounded-full blur-3xl group-hover:bg-secondary/20 transition-all"></div>
+<div class="w-14 h-14 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center mb-auto">
+<span class="material-symbols-outlined text-primary text-3xl">target</span>
+</div>
+<div class="mt-auto z-10">
+<h3 class="font-headline-lg text-[24px] leading-tight text-on-background font-bold mb-2">Practice rounds</h3>
+<p class="font-body-md text-on-surface-variant text-sm/relaxed">Adaptive recall sessions that target your weakest points using spaced repetition algorithms.</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="tilt-card glass-panel rounded-xl p-8 flex flex-col h-[400px] relative overflow-hidden group">
+<div class="absolute -left-10 -top-10 w-40 h-40 bg-tertiary-fixed/10 rounded-full blur-3xl group-hover:bg-tertiary-fixed/20 transition-all"></div>
+<div class="w-14 h-14 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center mb-auto">
+<span class="material-symbols-outlined text-on-background text-3xl">menu_book</span>
+</div>
+<div class="mt-auto z-10">
+<h3 class="font-headline-lg text-[24px] leading-tight text-on-background font-bold mb-2">Story mode</h3>
+<p class="font-body-md text-on-surface-variant text-sm/relaxed">Immersive narrative arcs where your language choices impact the outcome of cinematic scenarios.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: Final CTA & Footer -->
+<section class="snap-section h-screen w-full relative bg-surface flex flex-col justify-between pt-20" id="cta">
+<div class="flex-grow flex items-center justify-center px-margin-desktop relative">
+<!-- Abstract background element -->
+<div class="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
+<div class="w-[800px] h-[800px] border border-primary rounded-full animate-pulse blur-[2px]"></div>
+<div class="absolute w-[600px] h-[600px] border border-secondary rounded-full blur-[1px]"></div>
+</div>
+<div class="text-center z-10 max-w-3xl reveal-element">
+<h2 class="font-display-xl text-display-xl md:text-[80px] md:leading-[88px] text-on-background font-extrabold tracking-tighter mb-8">
+                        Commit to the <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Process.</span>
+</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12">
+                        Your six-month journey awaits. No gimmicks, just focused execution and verifiable results.
+                    </p>
+<button class="btn-primary bg-primary-container text-on-primary-container font-body-md font-bold py-5 px-12 rounded-lg text-lg inline-flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(37,99,235,0.3)]">
+                        Join Now
+                        <span class="material-symbols-outlined">rocket_launch</span>
+</button>
+</div>
+</div>
+<!-- Footer (Shared Component) -->
+<footer class="w-full py-12 bg-surface-container-lowest flex flex-col md:flex-row justify-between items-center px-margin-desktop max-w-container-max mx-auto gap-gutter border-t border-outline-variant/10 z-20">
+<div class="font-display-lg text-headline-lg-mobile text-on-surface font-bold tracking-tight">
+                    Aprende
+                </div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Help Center</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Careers</a>
+</div>
+<div class="font-body-md text-body-md text-on-surface-variant text-sm text-center md:text-right">
+                    © 2024 Aprende Language Systems. All rights reserved.
+                </div>
+</footer>
+</section>
+</main>
+<!-- Lightweight JS for entrance animations -->
+<script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Immersion Overlay Fade Out
+            setTimeout(() => {
+                const overlay = document.getElementById('immersion-overlay');
+                if (overlay) {
+                    overlay.style.opacity = '0';
+                }
+            }, 500);
+
+            // GSAP Reveal Simulation
+            const reveals = document.querySelectorAll('.gsap-reveal');
+            reveals.forEach((el) => {
+                setTimeout(() => {
+                    el.classList.remove('opacity-0', 'translate-y-[30px]');
+                    el.classList.add('opacity-100', 'translate-y-0');
+                }, 100); // Delays are handled by tailwind delay utilities
+            });
+
+            const observerOptions = {
+                root: null,
+                threshold: 0.3
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal-element').forEach((el) => {
+                if(!el.querySelector('.gsap-reveal')) {
+                    // Set initial state
+                    el.classList.add('transition-all', 'duration-1000', 'ease-out', 'opacity-0', 'translate-y-10');
+                    observer.observe(el);
+                }
+            });
+        });
+    </script>
+</body></html>

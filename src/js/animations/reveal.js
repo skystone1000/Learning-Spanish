@@ -4,7 +4,7 @@ import { prefersReducedMotion } from './reducedMotion.js'
 
 gsap.registerPlugin(ScrollTrigger)
 
-export function initReveal(elements) {
+export function initReveal(elements, { scroller = null } = {}) {
   if (prefersReducedMotion()) {
     elements.forEach((element) => {
       element.style.opacity = '1'
@@ -15,7 +15,7 @@ export function initReveal(elements) {
 
   elements.forEach((element) => {
     gsap.set(element, { clipPath: 'inset(0 100% 0 0)', opacity: 1 })
-    ScrollTrigger.create({
+    const triggerConfig = {
       trigger: element,
       start: 'top 88%',
       once: true,
@@ -26,8 +26,12 @@ export function initReveal(elements) {
           ease: 'power3.out',
         })
       },
-    })
+    }
+    if (scroller) triggerConfig.scroller = scroller
+    ScrollTrigger.create(triggerConfig)
   })
+
+  ScrollTrigger.refresh()
 }
 
 export function revealCorrect(element) {

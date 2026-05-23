@@ -1,20 +1,20 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
 :root {
-  --color-primary: #2563eb;
-  --color-primary-strong: #1d4ed8;
-  --color-secondary: #f59e0b;
-  --color-accent: #14b8a6;
+  --color-primary: #22d3ee;
+  --color-primary-strong: #0891b2;
+  --color-secondary: #facc15;
+  --color-accent: #a78bfa;
   --color-success: #10b981;
   --color-danger: #ef4444;
-  --color-bg: #10131f;
-  --color-surface: #181c2b;
-  --color-surface-2: #242a3d;
-  --color-surface-3: #2f374f;
+  --color-bg: #080c14;
+  --color-surface: #101827;
+  --color-surface-2: #172235;
+  --color-surface-3: #29364c;
   --color-text: #f8fafc;
-  --color-text-muted: #a8b3c7;
-  --font-heading: 'Sora', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --color-text-muted: #a8b7cf;
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Geist', 'Plus Jakarta Sans', sans-serif;
   --font-spanish: 'Playfair Display', serif;
   --radius: 8px;
   --transition: 180ms ease;
@@ -42,7 +42,9 @@ html {
 body {
   min-width: 320px;
   margin: 0;
-  background: var(--color-bg);
+  background:
+    linear-gradient(180deg, rgba(8, 12, 20, 0.96), rgba(9, 13, 22, 1)),
+    var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-body);
   line-height: 1.6;
@@ -88,6 +90,7 @@ a {
   min-height: 42px;
   border: 0;
   border-radius: var(--radius);
+  font-family: var(--font-heading);
   font-weight: 800;
   line-height: 1;
   text-decoration: none;
@@ -99,22 +102,24 @@ a {
 
 .btn-primary-custom {
   padding: 0.75rem 1rem;
-  background: var(--color-primary);
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--color-primary), #5eead4);
+  color: #04111d;
+  box-shadow: 0 18px 42px rgba(34, 211, 238, 0.22);
 }
 
 .btn-primary-custom:hover,
 .btn-primary-custom:focus-visible {
-  background: var(--color-primary-strong);
-  color: #ffffff;
+  background: linear-gradient(135deg, #67e8f9, #2dd4bf);
+  color: #04111d;
   transform: translateY(-1px);
 }
 
 .btn-secondary-custom {
   padding: 0.75rem 1rem;
-  background: transparent;
+  background: rgba(15, 23, 42, 0.34);
   color: var(--color-text);
   border: 1px solid var(--color-surface-3);
+  backdrop-filter: blur(12px);
 }
 
 .btn-secondary-custom:hover,
@@ -133,6 +138,35 @@ a {
 .icon-btn:hover,
 .icon-btn:focus-visible {
   background: var(--color-surface-3);
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.35rem;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 500,
+    'GRAD' 0,
+    'opsz' 24;
+}
+
+.material-symbols-outlined.filled {
+  font-variation-settings:
+    'FILL' 1,
+    'wght' 500,
+    'GRAD' 0,
+    'opsz' 24;
 }
 
 .snap-container {
