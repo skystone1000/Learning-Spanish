@@ -48,7 +48,7 @@ export function saveState(state) {
   localStorage.setItem(KEY, JSON.stringify(mergeState(state)))
 }
 
-export function completeLesson(id, xpEarned, heartsLeft) {
+export function completeLesson(id, xpEarned, heartsLeft, now = new Date()) {
   const state = getState()
   const stars = heartsLeft >= 5 ? 3 : heartsLeft >= 3 ? 2 : 1
   const previousXp = state.lessons[id]?.xpEarned || 0
@@ -58,6 +58,7 @@ export function completeLesson(id, xpEarned, heartsLeft) {
   state.xp.total += award
   state.xp.weeklyHistory[6] += award
   state.currentLesson = id
+  updateStreakForStudy(state, now)
   unlockEligibleMonths(state)
   saveState(state)
   return state.lessons[id]
@@ -72,16 +73,7 @@ export function loseHeart() {
 
 export function checkAndUpdateStreak(now = new Date()) {
   const state = getState()
-  const today = dateKey(now)
-
-  if (state.streak.lastStudiedDate === today) {
-    return state.streak.current
-  }
-
-  const yesterday = dateKey(new Date(now.getTime() - DAY_MS))
-  state.streak.current = state.streak.lastStudiedDate === yesterday ? state.streak.current + 1 : 1
-  state.streak.longest = Math.max(state.streak.longest, state.streak.current)
-  state.streak.lastStudiedDate = today
+  updateStreakForStudy(state, now)
   saveState(state)
   return state.streak.current
 }
@@ -94,6 +86,20 @@ export function unlockMonth(monthNumber) {
     saveState(state)
   }
   return state.unlockedMonths
+}
+
+function updateStreakForStudy(state, now = new Date()) {
+  const today = dateKey(now)
+
+  if (state.streak.lastStudiedDate === today) {
+    return state.streak.current
+  }
+
+  const yesterday = dateKey(new Date(now.getTime() - DAY_MS))
+  state.streak.current = state.streak.lastStudiedDate === yesterday ? state.streak.current + 1 : 1
+  state.streak.longest = Math.max(state.streak.longest, state.streak.current)
+  state.streak.lastStudiedDate = today
+  return state.streak.current
 }
 
 export function setMode(mode) {
@@ -141,7 +147,10 @@ export function resetProgress() {
 }
 
 function dateKey(date) {
-  return date.toISOString().split('T')[0]
+  const year = date.getFullYear()
+  const month = String(date.getMonth() + 1).padStart(2, '0')
+  const day = String(date.getDate()).padStart(2, '0')
+  return `${year}-${month}-${day}`
 }
 
 function unlockEligibleMonths(state) {

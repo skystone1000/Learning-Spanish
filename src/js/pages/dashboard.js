@@ -1,6 +1,6 @@
 import '../../css/main.css'
 import '../../css/pages/dashboard.css'
-import { checkAndUpdateStreak, getState, refillHeartsIfDue } from '../core/gameState.js'
+import { getState, refillHeartsIfDue } from '../core/gameState.js'
 import { lessonUrl, moduleUrl } from '../core/router.js'
 import { renderHeader } from '../components/header.js'
 import { monthCompletion } from '../components/progressBar.js'
@@ -11,7 +11,6 @@ const heroImage = 'https://lh3.googleusercontent.com/aida-public/AB6AXuB-_Z_KR69
 const monthIcons = ['waving_hand', 'groups', 'calendar_month', 'travel_explore', 'history_edu', 'forum']
 
 refillHeartsIfDue()
-checkAndUpdateStreak()
 const state = getState()
 document.body.dataset.theme = state.theme
 renderHeader(document.getElementById('header-root'), state)
@@ -36,12 +35,8 @@ root.innerHTML = `
       <div>
         <p class="dashboard-eyebrow">Spanish command center</p>
         <h1>Welcome back, ${learnerName}!</h1>
-        <p>Pick up at ${currentLesson.title}, or scan the six-month journey from one quiet, high-signal dashboard.</p>
       </div>
-      <a class="btn-primary-custom dashboard-hero-action" href="${lessonUrl(currentLesson.id)}">
-        Continue
-        <span class="material-symbols-outlined">arrow_forward</span>
-      </a>
+      <p class="dashboard-hero-copy">Pick up at ${currentLesson.title}, or scan the six-month journey from one quiet, high-signal dashboard.</p>
     </section>
 
     <section class="stats-grid" aria-label="Progress stats">

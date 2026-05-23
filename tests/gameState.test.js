@@ -20,11 +20,13 @@ describe('gameState', () => {
     expect(state.unlockedMonths).toEqual([1])
   })
 
-  it('completeLesson updates record, XP, and awards 3 stars for 5 hearts', () => {
-    completeLesson('m1-w1-l1', 10, 5)
+  it('completeLesson updates record, XP, stars, and streak', () => {
+    completeLesson('m1-w1-l1', 10, 5, new Date('2026-05-20T12:00:00Z'))
     const state = getState()
     expect(state.lessons['m1-w1-l1']).toEqual({ completed: true, xpEarned: 10, stars: 3 })
     expect(state.xp.total).toBe(10)
+    expect(state.streak.current).toBe(1)
+    expect(state.streak.lastStudiedDate).toBe('2026-05-20')
   })
 
   it('completeLesson awards 2 stars for 3-4 hearts', () => {
@@ -41,6 +43,14 @@ describe('gameState', () => {
   it('checkAndUpdateStreak starts at 1 and does not double-count the same day', () => {
     expect(checkAndUpdateStreak(new Date('2026-05-20T12:00:00Z'))).toBe(1)
     expect(checkAndUpdateStreak(new Date('2026-05-20T18:00:00Z'))).toBe(1)
+  })
+
+  it('completeLesson increments streak only once per local day', () => {
+    completeLesson('m1-w1-l1', 10, 5, new Date('2026-05-20T12:00:00Z'))
+    completeLesson('m1-w1-l2', 10, 5, new Date('2026-05-20T18:00:00Z'))
+    completeLesson('m1-w1-l3', 10, 5, new Date('2026-05-21T12:00:00Z'))
+
+    expect(getState().streak.current).toBe(2)
   })
 
   it('unlockMonth adds month without duplicates', () => {

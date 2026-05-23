@@ -43,17 +43,12 @@ body {
   line-height: 1;
 }
 
-.dashboard-hero p {
-  max-width: 720px;
-  margin: 0.9rem 0 0;
+.dashboard-hero-copy {
+  max-width: 520px;
+  margin: 0;
   color: #a8b7cf;
   font-size: 1.06rem;
-}
-
-.dashboard-hero-action {
-  gap: 0.45rem;
-  min-width: 154px;
-  min-height: 50px;
+  text-align: right;
 }
 
 .stats-grid {
@@ -104,7 +99,7 @@ body {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 360px;
   gap: 1rem;
-  align-items: start;
+  align-items: stretch;
 }
 
 .journey-panel,
@@ -165,7 +160,7 @@ body {
   min-height: 428px;
   overflow-x: auto;
   overscroll-behavior-inline: contain;
-  padding: 0 0 0.4rem;
+  padding: 1rem 0;
   scroll-padding-inline: 1rem;
   scroll-snap-type: x mandatory;
 }
@@ -226,7 +221,6 @@ body {
 }
 
 .month-card-media.has-photo {
-  place-items: end;
   background:
     linear-gradient(180deg, rgba(8, 12, 20, 0.08), rgba(8, 12, 20, 0.58)),
     var(--month-image),
@@ -251,16 +245,14 @@ body {
 }
 
 .month-card-media.has-photo .material-symbols-outlined {
-  width: 48px;
-  height: 48px;
-  display: grid;
-  place-items: center;
-  margin: 0 0.9rem 0.9rem 0;
-  border-radius: var(--radius);
-  background: rgba(8, 12, 20, 0.48);
-  color: #67e8f9;
-  font-size: 1.8rem;
-  backdrop-filter: blur(10px);
+  width: auto;
+  height: auto;
+  display: inline-block;
+  border-radius: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 4.2rem;
+  backdrop-filter: none;
 }
 
 .month-card-body {
@@ -344,8 +336,18 @@ body {
   position: sticky;
   top: 88px;
   display: grid;
+  grid-template-rows: auto auto auto auto auto 1fr auto auto;
   gap: 1rem;
+  align-self: stretch;
+  align-content: stretch;
+  justify-items: center;
   padding: 1.2rem;
+  text-align: center;
+}
+
+.next-panel .dashboard-eyebrow {
+  margin: 1rem 0;
+  text-align: center;
 }
 
 .next-ring {
@@ -377,11 +379,13 @@ body {
 .next-panel p:not(.dashboard-eyebrow) {
   margin: 0;
   color: #a8b7cf;
+  max-width: 260px;
 }
 
 .next-meta {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.7rem;
 }
 
@@ -403,6 +407,14 @@ body {
   gap: 0.45rem;
   min-height: 48px;
   width: 100%;
+}
+
+.next-panel .btn-primary-custom {
+  grid-row: 7;
+}
+
+.next-panel .btn-secondary-custom {
+  grid-row: 8;
 }
 
 .dashboard-footer {
@@ -441,6 +453,11 @@ body {
   .next-panel {
     position: static;
   }
+
+  .dashboard-hero-copy {
+    max-width: 720px;
+    text-align: left;
+  }
 }
 
 @media (max-width: 640px) {
@@ -453,7 +470,7 @@ body {
     font-size: 2.05rem;
   }
 
-  .dashboard-hero p {
+  .dashboard-hero-copy {
     font-size: 0.98rem;
   }
 
@@ -470,4 +487,119 @@ body {
   .journey-strip {
     grid-auto-columns: minmax(258px, 84%);
   }
+}
+
+[data-theme='light'] {
+  background: #f8fafc;
+}
+
+body[data-theme='light'] {
+  background:
+    linear-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(180deg, #f8fafc 0%, #eef6ff 54%, #f8fafc 100%);
+  background-size: 56px 56px, 56px 56px, auto;
+}
+
+[data-theme='light'] .dashboard-eyebrow,
+[data-theme='light'] .reference-link:hover,
+[data-theme='light'] .reference-link:focus-visible {
+  color: #0e7490;
+}
+
+[data-theme='light'] .dashboard-hero h1,
+[data-theme='light'] .stat-tile strong,
+[data-theme='light'] .journey-heading h2,
+[data-theme='light'] .month-card h3,
+[data-theme='light'] .next-ring span,
+[data-theme='light'] .next-panel h2,
+[data-theme='light'] .dashboard-footer strong {
+  color: #0f172a;
+}
+
+[data-theme='light'] .dashboard-hero p,
+[data-theme='light'] .stat-tile span:last-child,
+[data-theme='light'] .month-card p,
+[data-theme='light'] .next-panel p:not(.dashboard-eyebrow),
+[data-theme='light'] .dashboard-footer {
+  color: #5b6472;
+}
+
+[data-theme='light'] .stat-tile,
+[data-theme='light'] .journey-panel,
+[data-theme='light'] .next-panel,
+[data-theme='light'] .month-card {
+  border-color: rgba(100, 116, 139, 0.2);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(248, 250, 252, 0.8)),
+    rgba(255, 255, 255, 0.88);
+  box-shadow: 0 22px 58px rgba(15, 23, 42, 0.1);
+}
+
+[data-theme='light'] .reference-link {
+  border-color: rgba(100, 116, 139, 0.22);
+  background: rgba(255, 255, 255, 0.7);
+  color: #334155;
+}
+
+[data-theme='light'] .journey-strip::-webkit-scrollbar-track {
+  background: rgba(100, 116, 139, 0.14);
+}
+
+[data-theme='light'] .journey-strip::-webkit-scrollbar-thumb {
+  background: rgba(8, 145, 178, 0.36);
+}
+
+[data-theme='light'] .month-card-media {
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--month-color) 18%, #ffffff 72%), rgba(226, 232, 240, 0.86));
+}
+
+[data-theme='light'] .month-card-media.has-photo {
+  background:
+    linear-gradient(180deg, rgba(248, 250, 252, 0.12), rgba(248, 250, 252, 0.62)),
+    var(--month-image),
+    linear-gradient(135deg, color-mix(in srgb, var(--month-color) 18%, #ffffff 72%), rgba(226, 232, 240, 0.86));
+  background-position: center;
+  background-size: cover;
+}
+
+[data-theme='light'] .month-card-media::after {
+  background: linear-gradient(180deg, transparent 38%, rgba(248, 250, 252, 0.64) 100%);
+}
+
+[data-theme='light'] .month-card-media .material-symbols-outlined {
+  color: rgba(15, 23, 42, 0.58);
+  text-shadow: none;
+}
+
+[data-theme='light'] .month-card.is-active {
+  box-shadow: 0 24px 62px rgba(15, 23, 42, 0.12), 0 0 34px color-mix(in srgb, var(--month-color) 16%, transparent);
+}
+
+[data-theme='light'] .month-progress {
+  background: rgba(100, 116, 139, 0.16);
+}
+
+[data-theme='light'] .month-action {
+  background: color-mix(in srgb, var(--month-color) 18%, #ffffff 82%);
+  color: #0f172a;
+}
+
+[data-theme='light'] .month-action:hover,
+[data-theme='light'] .month-action:focus-visible {
+  color: #0f172a;
+}
+
+[data-theme='light'] .month-action.is-disabled,
+[data-theme='light'] .next-meta span {
+  background: rgba(100, 116, 139, 0.1);
+  color: #64748b;
+}
+
+[data-theme='light'] .next-ring {
+  background:
+    radial-gradient(circle at center, #ffffff 0 57%, transparent 58%),
+    conic-gradient(#0891b2 var(--next-progress), rgba(100, 116, 139, 0.18) 0);
+  box-shadow: 0 0 34px rgba(8, 145, 178, 0.12);
 }

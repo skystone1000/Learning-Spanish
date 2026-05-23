@@ -28,7 +28,7 @@ if (!month) {
       <p class="text-muted mb-4">${month.subtitle}</p>
       <div id="month-progress" class="mb-4"></div>
       ${locked ? '<div class="content-card mx-0">Complete the previous month in Game Mode to unlock this one.</div>' : ''}
-      <div class="row g-3" id="lesson-grid"></div>
+      <div class="module-lesson-grid" id="lesson-grid"></div>
     </section>
   `
 
@@ -41,9 +41,6 @@ if (!month) {
 
   if (!locked) {
     renderLessonGrid(document.getElementById('lesson-grid'), month.lessons, state.lessons, state.mode)
-    document.querySelectorAll('#lesson-grid > article').forEach((card) => {
-      card.classList.add('col-12', 'col-sm-6', 'col-lg-3')
-    })
   }
 
   initReveal([...document.querySelectorAll('.lesson-card')])

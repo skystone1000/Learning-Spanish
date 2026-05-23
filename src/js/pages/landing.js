@@ -58,7 +58,7 @@ document.getElementById('snap-cta').innerHTML = `
   <div class="section-band landing-cta reveal-item">
     <h2>Commit to the <span>Process.</span></h2>
     <p>Your six-month journey awaits. Focused execution, cinematic pacing, and verifiable progress.</p>
-    <a href="lesson.html#m1-w1-l1" class="btn-primary-custom btn-cta">
+    <a href="dashboard.html" class="btn-primary-custom btn-cta">
       Join Now
       <span class="material-symbols-outlined">rocket_launch</span>
     </a>

@@ -3,7 +3,7 @@ import '../../css/components/cards.css'
 import '../../css/components/exercises.css'
 import '../../css/components/celebration.css'
 import '../../css/pages/lesson.css'
-import { getState, completeLesson, loseHeart, checkAndUpdateStreak, refillHeartsIfDue, setCurrentLesson } from '../core/gameState.js'
+import { getState, completeLesson, loseHeart, refillHeartsIfDue, setCurrentLesson } from '../core/gameState.js'
 import { initExplode } from '../animations/explode.js'
 import { initReveal, revealCorrect, revealWrong } from '../animations/reveal.js'
 import { initAudioButtons } from '../core/audio.js'
@@ -14,7 +14,6 @@ import { calculateXP, checkAnswer, getStars, renderExercise } from '../component
 import { getLessonById, getNextLesson, getPreviousLesson } from '../../data/curriculum.js'
 
 refillHeartsIfDue()
-checkAndUpdateStreak()
 
 let state = getState()
 document.body.dataset.theme = state.theme
