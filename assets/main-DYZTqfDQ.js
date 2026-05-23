@@ -1,4 +1,4 @@
-import{g as d,b as c}from"./header-tpRfakPe.js";import{i as m}from"./explode-BMg1_SZ8.js";import{g as r,S as o,p as h,i as u}from"./reveal-BBM4lrTc.js";r.registerPlugin(o);function p(t,{scroller:e=null}={}){h()||(t.forEach(n=>{const a=[...n.children];r.set(a,{opacity:0,y:36});const i={trigger:n,start:"top 72%",once:!0,onEnter:()=>{r.to(a,{opacity:1,y:0,duration:.65,stagger:.1,ease:"power3.out"})}};e&&(i.scroller=e),o.create(i)}),o.refresh())}const g="/learning-spanish/images/landing-hero-sharp.png",s=d();document.body.dataset.theme=s.theme;c(document.getElementById("header-root"),s);document.getElementById("snap-hero").innerHTML=`
+import{g as d,a as c}from"./header-ConrUMEu.js";import{i as m}from"./explode-BMg1_SZ8.js";import{g as r,S as o,p as h,i as u}from"./reveal-BBM4lrTc.js";r.registerPlugin(o);function p(t,{scroller:e=null}={}){h()||(t.forEach(a=>{const n=[...a.children];r.set(n,{opacity:0,y:36});const i={trigger:a,start:"top 72%",once:!0,onEnter:()=>{r.to(n,{opacity:1,y:0,duration:.65,stagger:.1,ease:"power3.out"})}};e&&(i.scroller=e),o.create(i)}),o.refresh())}const g="/learning-spanish/images/landing-hero-sharp.png",s=d();document.body.dataset.theme=s.theme;c(document.getElementById("header-root"),s);document.getElementById("snap-hero").innerHTML=`
   <div class="landing-hero-bg" aria-hidden="true">
     <img src="${g}" alt="" />
   </div>
@@ -20,12 +20,12 @@ import{g as d,b as c}from"./header-tpRfakPe.js";import{i as m}from"./explode-BMg
       <p>Engineered routines that move Spanish from recognition to reflex.</p>
     </div>
     <div class="method-grid">
-      ${[["bolt","Quick lessons","High-intensity intervals designed to lock vocabulary into working memory without draining your day."],["target","Practice rounds","Recall sessions mix listening, matching, typing, and sentence assembly around your weakest points."],["menu_book","Story mode","A pressure-free path turns the same curriculum into an immersive reading flow."]].map(([t,e,n],a)=>`
-        <article class="method-card reveal-item ${a===1?"method-card-raised":""}">
+      ${[["bolt","Quick lessons","High-intensity intervals designed to lock vocabulary into working memory without draining your day."],["target","Practice rounds","Recall sessions mix listening, matching, typing, and sentence assembly around your weakest points."],["menu_book","Story mode","A pressure-free path turns the same curriculum into an immersive reading flow."]].map(([t,e,a],n)=>`
+        <article class="method-card reveal-item ${n===1?"method-card-raised":""}">
           <div class="method-icon"><span class="material-symbols-outlined">${t}</span></div>
           <div>
             <h3>${e}</h3>
-            <p>${n}</p>
+            <p>${a}</p>
           </div>
         </article>
       `).join("")}
@@ -36,7 +36,7 @@ import{g as d,b as c}from"./header-tpRfakPe.js";import{i as m}from"./explode-BMg
   <div class="section-band landing-cta reveal-item">
     <h2>Commit to the <span>Process.</span></h2>
     <p>Your six-month journey awaits. Focused execution, cinematic pacing, and verifiable progress.</p>
-    <a href="lesson.html#m1-w1-l1" class="btn-primary-custom btn-cta">
+    <a href="dashboard.html" class="btn-primary-custom btn-cta">
       Join Now
       <span class="material-symbols-outlined">rocket_launch</span>
     </a>

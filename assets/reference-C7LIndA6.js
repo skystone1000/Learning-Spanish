@@ -1,4 +1,4 @@
-import{g as m,b as u}from"./header-tpRfakPe.js";import{i as f}from"./reveal-BBM4lrTc.js";import{C as h}from"./curriculum-DIRFPJHL.js";const l=m();document.body.dataset.theme=l.theme;u(document.getElementById("header-root"),l);const o=h.months.map(e=>({label:`Month ${e.id}: ${e.title}`,color:e.color,weeks:[1,2,3,4].map(a=>({week:a,lessons:e.lessons.filter(s=>s.week===a).map(s=>({...s,vocabulary:s.content.filter(t=>t.type==="vocabulary"||t.type==="phrase"),grammar:s.content.filter(t=>t.type==="grammar"),dialogues:s.content.filter(t=>t.type==="dialogue")}))}))})),v=document.getElementById("reference-root");v.innerHTML=`
+import{g as m,a as u}from"./header-ConrUMEu.js";import{i as f}from"./reveal-BBM4lrTc.js";import{C as h}from"./curriculum-DIRFPJHL.js";const l=m();document.body.dataset.theme=l.theme;u(document.getElementById("header-root"),l);const o=h.months.map(e=>({label:`Month ${e.id}: ${e.title}`,color:e.color,weeks:[1,2,3,4].map(a=>({week:a,lessons:e.lessons.filter(s=>s.week===a).map(s=>({...s,vocabulary:s.content.filter(t=>t.type==="vocabulary"||t.type==="phrase"),grammar:s.content.filter(t=>t.type==="grammar"),dialogues:s.content.filter(t=>t.type==="dialogue")}))}))})),v=document.getElementById("reference-root");v.innerHTML=`
   <section class="mb-4">
     <p class="topic-chip mb-3">Reference</p>
     <h1 class="mb-2">Vocabulary & Grammar</h1>
@@ -29,11 +29,11 @@ import{g as m,b as u}from"./header-tpRfakPe.js";import{i as f}from"./reveal-BBM4
       <section class="reference-week reveal-item">
         <h3 class="reference-week-title">Week ${t.week}</h3>
         <div class="reference-lessons">
-          ${t.lessons.map(r=>b(r)).join("")}
+          ${t.lessons.map(r=>g(r)).join("")}
         </div>
       </section>
     `).join("")}
-  `,g(),f([...n.querySelectorAll(".reveal-item")])}function b(e){return`
+  `,b(),f([...n.querySelectorAll(".reveal-item")])}function g(e){return`
     <details class="reference-lesson" ${e.week===1&&e.lesson===1?"open":""}>
       <summary class="reference-lesson-summary">
         <span class="topic-chip">Lesson ${e.lesson}</span>
@@ -95,4 +95,4 @@ import{g as m,b as u}from"./header-tpRfakPe.js";import{i as f}from"./reveal-BBM4
         `:""}
       </div>
     </details>
-  `}function g(){var e,a;(e=n.querySelector("[data-expand-reference]"))==null||e.addEventListener("click",()=>{n.querySelectorAll(".reference-lesson").forEach(s=>{s.open=!0})}),(a=n.querySelector("[data-collapse-reference]"))==null||a.addEventListener("click",()=>{n.querySelectorAll(".reference-lesson").forEach(s=>{s.open=!1})})}i.forEach(e=>{e.addEventListener("click",()=>d(Number(e.dataset.index)))});d(0);
+  `}function b(){var e,a;(e=n.querySelector("[data-expand-reference]"))==null||e.addEventListener("click",()=>{n.querySelectorAll(".reference-lesson").forEach(s=>{s.open=!0})}),(a=n.querySelector("[data-collapse-reference]"))==null||a.addEventListener("click",()=>{n.querySelectorAll(".reference-lesson").forEach(s=>{s.open=!1})})}i.forEach(e=>{e.addEventListener("click",()=>d(Number(e.dataset.index)))});d(0);
